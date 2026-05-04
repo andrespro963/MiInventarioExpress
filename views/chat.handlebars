@@ -1,0 +1,56 @@
+<h1>Chat en tiempo real</h1>
+
+<link rel="stylesheet" href="/css/chat.css">
+<p>Usuario: {{usuario.email}}</p>
+
+<a href="/logout">Cerrar sesión</a>
+
+<ul id="mensajes"></ul>
+
+<input id="mensajeInput" placeholder="Escribe un mensaje">
+<button class="btn-enviar" onclick="enviarMensaje()">Enviar</button>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+    const socket = io();
+
+    console.log("Intentando conectar...");
+
+    const input = document.getElementById("mensajeInput");
+    const lista = document.getElementById("mensajes");
+
+    // 👇 usuario logueado desde Handlebars
+    const usuario = "{{usuario.email}}";
+
+    function enviarMensaje() {
+        const mensaje = input.value;
+
+        // ✔ AHORA enviamos OBJETO (no string)
+        socket.emit("mensaje", {
+            usuario: usuario,
+            texto: mensaje
+        });
+
+        input.value = "";
+    }
+
+    socket.on("mensaje", (data) => {
+
+        console.log("RECIBIDO:", data);
+
+        const li = document.createElement("li");
+
+        li.textContent = data.usuario + ": " + data.texto;
+
+        li.classList.add("mensaje");
+
+        if (data.usuario === usuario) {
+            li.classList.add("mio");
+        } else {
+            li.classList.add("otro");
+        }
+
+        lista.appendChild(li);
+    });
+</script>

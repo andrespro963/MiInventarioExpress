@@ -1,0 +1,15 @@
+<h1>Lista de Productos</h1>
+
+<a href="/crear">Crear Producto</a>
+
+<ul>
+    {{#each productos}}
+        <li>
+            <strong>{{nombre}}</strong> - ${{precio}} <br>
+            {{descripcion}} <br>
+            {{#if imagen}}
+                <img src="/uploads/{{imagen}}" width="100">
+            {{/if}}
+        </li>
+    {{/each}}
+</ul>

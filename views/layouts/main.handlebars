@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MiInventarioExpress</title>
+</head>
+<body>
+
+{{#if usuario}}
+
+    <!-- NAVBAR SOLO LOGUEADO -->
+    <nav>
+        <a href="/productos">Productos</a>
+        <a href="/crear">Crear Producto</a>
+        <a href="/chat">Chat</a>
+        <a href="/logout">Salir</a>
+    </nav>
+
+    <p>Bienvenido: {{usuario.email}}</p>
+
+    <hr>
+
+{{/if}}
+
+<!-- CONTENIDO DINÁMICO -->
+{{{body}}}
+
+</body>
+</html>

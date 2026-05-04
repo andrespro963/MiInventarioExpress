@@ -1,0 +1,36 @@
+.btn-enviar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-enviar:hover {
+    background-color: #0056b3;
+}
+
+#mensajes {
+    list-style: none;
+    padding: 0;
+}
+
+.mensaje {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 8px;
+    max-width: 60%;
+}
+
+.mio {
+    background-color: #d1ecf1;
+    text-align: right;
+    margin-left: auto;
+}
+
+.otro {
+    background-color: #f8d7da;
+    text-align: left;
+    margin-right: auto;
+}
