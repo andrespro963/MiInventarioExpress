@@ -1,3 +1,3 @@
 *MiInventarioExpress*
 Datos: Nombres: Andres Vicente Procel Bolagay Correo: aprocelb@est.ups.edu.ec
-Funcionalidades implementadas:
+Funcionalidades implementadas: La aplicación MiInventarioExpress permite la gestión completa de productos mediante operaciones CRUD (crear, listar, actualizar y eliminar), almacenando la información en MongoDB a través de Mongoose. Incluye autenticación de usuarios con sesiones seguras y encriptación de contraseñas con bcrypt. Los productos pueden registrar nombre, precio, descripción e imagen, utilizando Multer para la carga de archivos. Además, la aplicación integra un sistema de chat en tiempo real entre usuarios autenticados mediante Socket.io, permitiendo la comunicación instantánea. Todo el sistema está estructurado bajo el patrón MVC para una mejor organización y escalabilidad.
